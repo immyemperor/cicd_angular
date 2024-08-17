@@ -3,10 +3,6 @@ pipeline {
 
     tools {nodejs "nodejs"}
 
-    enviroments{
-        GITHUB_TOKEN = credential('GITHUB_TOKEN')
-    }
-
     stages {
         stage('node setup') { 
             steps {
