@@ -36,6 +36,14 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "production-admin": {
+                "fileReplacements": [
+                  {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.prod-admin.ts"
+                  }
+                ]
+              },
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -63,6 +71,9 @@
           "configurations": {
             "production": {
               "browserTarget": "cicd:build:production"
+            },
+            "production-admin": {
+              "browserTarget": "cicd:build:production-admin"
             }
           }
         },
@@ -110,6 +121,9 @@
           },
           "configurations": {
             "production": {
+              "devServerTarget": "cicd:serve:production"
+            },
+            "production-admin": {
               "devServerTarget": "cicd:serve:production"
             }
           }
