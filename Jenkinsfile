@@ -19,7 +19,7 @@ pipeline {
                 // create zip
                 //sh "zip -r distro-achieve.zip /distro"
                 script{
-                     zip zipFile: 'distro-achieve.zip', archive: false, dir: 'distro'
+                     zip zipFile: 'distro-achieve.zip', archive: false, dir: 'dist'
                 }
             }
         }
