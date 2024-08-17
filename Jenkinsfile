@@ -17,7 +17,9 @@ pipeline {
         stage("archive distro"){
             steps{
                 // create zip
-                sh "zip -r distro-achieve.zip /distro"
+                //sh "zip -r distro-achieve.zip /distro"
+                zip zipFile: 'distro-achieve.zip', archive: false, dir: 'distro'
+                archiveArtifacts artifacts: 'distro-achieve.zip', fingerprint: true
             }
         }
 
