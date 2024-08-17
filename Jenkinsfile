@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-        stages('Upload artifacts'){
+        stage('Upload artifacts'){
             steps{
                 uploadGithubReleaseAsset(
                     credentialId: 'GITHUB_TOKEN',
