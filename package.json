@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --c=production",
-    "build-admin": "ng build --c=production-admin",
+    "build": "ng build --configuration=production",
+    "build-admin": "ng build --configuration=production-admin",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
