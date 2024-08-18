@@ -73,7 +73,7 @@
               "browserTarget": "cicd:build:production"
             },
             "production-admin": {
-              "browserTarget": "cicd:build:production-admin"
+              "browserTarget": "cicd:build-admin:production"
             }
           }
         },
