@@ -71,9 +71,6 @@
           "configurations": {
             "production": {
               "browserTarget": "cicd:build:production"
-            },
-            "production-admin": {
-              "browserTarget": "cicd:build-admin:production"
             }
           }
         },
@@ -121,9 +118,6 @@
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cicd:serve:production"
-            },
-            "production-admin": {
               "devServerTarget": "cicd:serve:production"
             }
           }
