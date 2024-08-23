@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    parameters {
+        booleanParam(name: 'withAdminBuild', defaultValue: true, description: '')
+    }
+
+    environment {
+        WITH_ADMIN_BUILD = $params.withAdminBuild
+    }
 
     tools {nodejs "nodejs"}
 
@@ -9,7 +16,22 @@ pipeline {
                 sh 'npm install --force' 
             }
         }
-        stage('build'){
+        stage('build-with-admin'){
+            when{
+                expression {
+                    return env.WITH_ADMIN_BUILD;
+                }
+            }
+            steps{
+                sh 'npm run build'
+            }
+        }
+        stage('build-without-admin'){
+            when{
+                expression {
+                    return !env.WITH_ADMIN_BUILD;
+                }
+            }
             steps{
                 sh 'npm run build'
             }
