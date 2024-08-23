@@ -1,11 +1,7 @@
 pipeline {
     agent any
     parameters {
-        booleanParam(name: 'withAdminBuild', defaultValue: true, description: '')
-    }
-
-    environment {
-        WITH_ADMIN_BUILD = params.withAdminBuild
+        booleanParam(name: 'WITH_ADMIN_BUILD', defaultValue: true, description: '')
     }
 
     tools {nodejs "nodejs"}
@@ -19,7 +15,7 @@ pipeline {
         stage('build-with-admin'){
             when{
                 expression {
-                    return env.WITH_ADMIN_BUILD;
+                    return params.WITH_ADMIN_BUILD;
                 }
             }
             steps{
@@ -29,7 +25,7 @@ pipeline {
         stage('build-without-admin'){
             when{
                 expression {
-                    return !env.WITH_ADMIN_BUILD;
+                    return !params.WITH_ADMIN_BUILD;
                 }
             }
             steps{
