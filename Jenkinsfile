@@ -5,7 +5,7 @@ pipeline {
     }
 
     environment {
-        WITH_ADMIN_BUILD = $params.withAdminBuild
+        WITH_ADMIN_BUILD = params.withAdminBuild
     }
 
     tools {nodejs "nodejs"}
